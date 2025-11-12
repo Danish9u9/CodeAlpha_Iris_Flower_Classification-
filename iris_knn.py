@@ -44,16 +44,3 @@ disp.plot()
 joblib.dump(model, 'iris_model.pkl')
 print("\nTrained model saved as 'iris_model.pkl'")
 
-# 9. Optional: Interactive prediction
-print("\n--- Predict a new Iris flower species ---")
-try:
-    sepal_length = float(input("Sepal Length (cm): "))
-    sepal_width = float(input("Sepal Width (cm): "))
-    petal_length = float(input("Petal Length (cm): "))
-    petal_width = float(input("Petal Width (cm): "))
-
-    new_data = [[sepal_length, sepal_width, petal_length, petal_width]]
-    prediction = model.predict(new_data)
-    print(f"Predicted Species: {prediction[0]}")
-except Exception as e:
-    print("Prediction skipped. Enter valid numbers next time.")
